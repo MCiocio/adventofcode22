@@ -1,0 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+
+body, html {
+    overflow:hidden;
+    margin: 0;
+    height: 100%;
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #FFF;
+
+}
+
+.sky {
+    height: 100%;
+    color: #FFF;
+    display: block;
+    background-color: #34A65F
+}
+font, h4 {
+    position: relative;
+    z-index:1231231;
+    text-shadow: 1px 1px 3px #fff;
+}
