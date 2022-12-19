@@ -18,7 +18,7 @@ function dayTwoPt1(){
         // 'Z' => 3,
     ];
     printTitle('Day Two PT1');
-    $fp = fopen('strategy.csv', 'r');
+    $fp = fopen('csv/day2/strategy.csv', 'r');
     while ($row = fgetcsv($fp)) {
         $couple = explode(' ', $row[0]);
     }
@@ -32,7 +32,7 @@ function isVictory($opponent_choice, $my_choice): bool
 
 function dayOnePt2(){
     printTitle('Day One PT2');
-    $fp = fopen('calories.csv', 'r');
+    $fp = fopen('csv/day1/calories.csv', 'r');
     $ranking_table = [0, 0, 0,];
     $total_elf_num = 0;
     $current_elf_calories = 0;
@@ -57,7 +57,7 @@ function dayOnePt2(){
 }
 function dayOnePt1(){
     printTitle('Day One PT1');
-    $fp = fopen('calories.csv', 'r');
+    $fp = fopen('csv/day1/calories.csv', 'r');
     $total_elf_num = 0;
     $saved_elf_num = 0;
     $saved_elf_calories = 0;
