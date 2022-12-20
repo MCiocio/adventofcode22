@@ -8,15 +8,15 @@ use function explode;
 
 class DayChallenge2 extends DayChallengeBase
 {
-    const ROCK = 'A';
-    const PAPER = 'B';
-    const SCISSOR = 'C';
-    const MYROCK = 'X';
-    const MYPAPER = 'Y';
-    const MYSCISSOR = 'Z';
-    const DEFEAT = 'DEFEAT';
-    const WIN = 'WIN';
-    const DRAW = 'DRAW';
+    private const ROCK = 'A';
+    private const PAPER = 'B';
+    private const SCISSOR = 'C';
+    private const MYROCK = 'X';
+    private const MYPAPER = 'Y';
+    private const MYSCISSOR = 'Z';
+    private const DEFEAT = 'DEFEAT';
+    private const WIN = 'WIN';
+    private const DRAW = 'DRAW';
     protected $title = 'Day Two';
     protected $legends = [
         self::MYROCK    => 1,
