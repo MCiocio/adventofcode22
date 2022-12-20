@@ -1,5 +1,5 @@
 <?php
-namespace AdventCode\DayChallanges;
+namespace AdventCode\DayChallenges;
 use AdventCode\Common\DayChallengeBase;
 use AdventCode\Common\PrintCmnFns;
 

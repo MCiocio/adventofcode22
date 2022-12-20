@@ -8,16 +8,18 @@ echo '</head>';
 echo '<section class="sky">';
 
 for ($index = 1; $index < 27; $index++) {
-    PrintCmnFns::printSimpleRow("Round $index");
-    // $day_challenge = new \AdventCode\DayChallanges\DayChallenge1();
-    $day_challenge = DayChallengeFactory::factory($index);
-    if (is_null($day_challenge)) {
-        PrintCmnFns::printSimpleRow('is null');
+    // PrintCmnFns::printSimpleRow("Round $index");
+    // $day_challenge = new \AdventCode\DayChallenges\DayChallenge1();
+    try {
+        $day_challenge = DayChallengeFactory::factory($index);
+    } catch (Exception $exception) {
+        echo $exception->getMessage();
         continue;
     }
     PrintCmnFns::printSimpleRow("Printing Day $index");
     $day_challenge->printFirstPartSolution();
     $day_challenge->printSecondPartSolution();
+    PrintCmnFns::printSeparator();
 }
 
 echo '</section>';

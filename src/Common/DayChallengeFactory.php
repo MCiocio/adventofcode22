@@ -1,15 +1,20 @@
 <?php
 namespace AdventCode\Common;
-use AdventCode\DayChallanges\DayChallenge1;
-use AdventCode\Common\DayChallengeInterface;
+
+use Exception;
+
 class DayChallengeFactory
 {
+    const NAMESPACE = "AdventCode\\DayChallenges\\";
     public static function factory(int $day): ?DayChallengeInterface
     {
-        $class_name = 'DayChallenge'.$day;
-        if (class_exists($class_name)){
-            return new $class_name();
+        $class = self::NAMESPACE. 'DayChallenge' .$day;
+        // return new DayChallenge1();
+        if(class_exists($class)){
+            // if($class instanceof DayChallengeInterface){
+                return new $class();
+            // }
         }
-        return null;
+        throw new Exception('DayChallange not defined for this day');
     }
 }

@@ -18,6 +18,11 @@ class PrintCmnFns
         echo "$text <br/>";
     }
 
+    public static function printSeparator(): void
+    {   
+        echo "<hr/>";
+    }
+
     public static function includeCss()
     {
         echo "<link rel='stylesheet' href='/css/style.css'/>";
