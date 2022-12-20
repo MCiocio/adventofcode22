@@ -1,0 +1,19 @@
+{
+    "name": "vendor_name/adventcode22",
+    "description": "Project to solve the Advent Of Code 2022 Challenge",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "micheleciociola",
+            "email": "michele.ciociola.dev@gmail.com"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src/"
+        }
+    }
+}
