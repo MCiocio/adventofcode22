@@ -9,7 +9,7 @@ class DayChallenge1 extends DayChallengeBase
 
     public function printFirstPartSolution(): void
     {
-        PrintCmnFns::printTitle('Day One PT1');
+        PrintCmnFns::printTitle($this->title.' PT1');
         $fp = fopen('csv/day1/calories.csv', 'r');
         $total_elf_num = 0;
         $saved_elf_num = 0;
@@ -40,7 +40,7 @@ class DayChallenge1 extends DayChallengeBase
 
     public function printSecondPartSolution(): void
     {
-        PrintCmnFns::printTitle('Day One PT2');
+        PrintCmnFns::printTitle($this->title.' PT2');
         $fp = fopen('csv/day1/calories.csv', 'r');
         $ranking_table = [0, 0, 0,];
         $total_elf_num = 0;

@@ -13,10 +13,10 @@ for ($index = 1; $index < 27; $index++) {
     try {
         $day_challenge = DayChallengeFactory::factory($index);
     } catch (Exception $exception) {
-        echo $exception->getMessage();
+        PrintCmnFns::printSimpleRow($exception->getMessage());
         continue;
     }
-    PrintCmnFns::printSimpleRow("Printing Day $index");
+    PrintCmnFns::printTitle("Printing Day $index");
     $day_challenge->printFirstPartSolution();
     $day_challenge->printSecondPartSolution();
     PrintCmnFns::printSeparator();

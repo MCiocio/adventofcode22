@@ -5,7 +5,12 @@ class PrintCmnFns
 {
     public static function printTitle(string $title): void
     {
-        echo "<h4>$title </h4>";
+        self::printSimpleRow("<h4>$title </h4>", false);
+    }
+
+    public static function printSubtitle(string $subtitle): void
+    {
+        self::printSimpleRow("<h5>$subtitle </h5>", false);
     }
 
     public static function printRow(string $prefix, string $subject): void
@@ -13,9 +18,9 @@ class PrintCmnFns
         echo "<font color='#228b22'> $prefix </font><font color='#F5624D'>$subject</font><br/>";
     }
 
-    public static function printSimpleRow(string $text): void
+    public static function printSimpleRow(string $text, bool $acapo = true): void
     {   
-        echo "$text <br/>";
+        echo "$text". ($acapo ? '<br/>' : '');
     }
 
     public static function printSeparator(): void

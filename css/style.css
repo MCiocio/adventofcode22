@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700);
 
 body, html {
-    overflow:hidden;
+    /*overflow:hidden;*/
     margin: 0;
     height: 100%;
     font-family: 'Lato';
