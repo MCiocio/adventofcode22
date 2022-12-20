@@ -2,19 +2,25 @@
 require_once (__DIR__ . '/vendor/autoload.php');
 use AdventCode\Common\PrintCmnFns;
 use AdventCode\Common\DayChallengeFactory;
-echo "<head>";
+echo '<head>';
 PrintCmnFns::includeCss();
-PrintCmnFns::includeJs();
-echo "</head>";
+echo '</head>';
+echo '<section class="sky">';
 
-for ($i = 0; $i < 26; $i++) {
-    PrintCmnFns::printSimpleRow("Round $i");
-    $day_challenge = DayChallengeFactory::factory($i);
+for ($index = 1; $index < 27; $index++) {
+    PrintCmnFns::printSimpleRow("Round $index");
+    // $day_challenge = new \AdventCode\DayChallanges\DayChallenge1();
+    $day_challenge = DayChallengeFactory::factory($index);
     if (is_null($day_challenge)) {
-        PrintCmnFns::printSimpleRow("is null");
+        PrintCmnFns::printSimpleRow('is null');
         continue;
     }
-    PrintCmnFns::printSimpleRow("Printing Day $i");
+    PrintCmnFns::printSimpleRow("Printing Day $index");
     $day_challenge->printFirstPartSolution();
     $day_challenge->printSecondPartSolution();
 }
+
+echo '</section>';
+
+
+PrintCmnFns::includeJs();
