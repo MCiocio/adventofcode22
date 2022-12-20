@@ -4,7 +4,7 @@ namespace AdventCode\DayChallenges;
 
 use AdventCode\Common\DayChallengeBase;
 use AdventCode\Common\PrintCmnFns;
-use function explode;
+use Exception;
 
 class DayChallenge2 extends DayChallengeBase
 {
@@ -18,7 +18,7 @@ class DayChallenge2 extends DayChallengeBase
     private const WIN = 'WIN';
     private const DRAW = 'DRAW';
     protected $title = 'Day Two';
-    protected $legends = [
+    protected $legends_pt1 = [
         self::MYROCK    => 1,
         self::MYPAPER   => 2,
         self::MYSCISSOR => 3,
@@ -38,9 +38,9 @@ class DayChallenge2 extends DayChallengeBase
         $total_battles = 0;
         while ($row = fgetcsv($fp)) {
             list($response, $myresponse) = explode(' ', $row[0]);
-            $score = $this->legends[$myresponse];
+            $score = $this->legends_pt1[$myresponse];
             $outcome = $this->getOutcome($response, $myresponse);
-            $score += $this->legends[$outcome];
+            $score += $this->legends_pt1[$outcome];
             $my_total_score += $score;
             if ($this->isWin($response, $myresponse)) {
                 $total_win++;
