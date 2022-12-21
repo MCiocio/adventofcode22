@@ -6,15 +6,18 @@
     var canvas = document.createElement('canvas');
     var ctx = canvas.getContext('2d');
     var width = masthead.clientWidth;
-    var height = document.body.clientHeight;
+    // var height = document.body.clientHeight;
+    var height = document.body.scrollHeight;
     var i = 0;
     var active = false;
 
     function onResize() {
         width = masthead.clientWidth;
-        height = document.body.clientHeight-10;
+        // height = document.body.clientHeight-10;
+        height = document.body.scrollHeight;
         canvas.width = width;
-        canvas.height = document.body.clientHeight;
+        // canvas.height = document.body.clientHeight;
+        canvas.height = document.body.scrollHeight;
         ctx.fillStyle = '#FFF';
 
         var wasActive = active;
