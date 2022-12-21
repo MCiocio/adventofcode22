@@ -35,6 +35,6 @@ class PrintCmnFns
 
     public static function includeJs()
     {
-        echo "<script type='javascript' src='/js/snow.js'></script>";
+        echo "<script type='text/javascript' src='/js/snow.js'></script>";
     }
 }
