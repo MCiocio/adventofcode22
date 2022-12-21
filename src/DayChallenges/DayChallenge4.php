@@ -17,12 +17,7 @@ class DayChallenge4 extends DayChallengeBase
         $total_range = 0;
         $fp = $this->openStream();
         while ($row = fgetcsv($fp)) {
-            list($elf1_min, $elf1_max) = explode('-', $row[0]);
-            list($elf2_min, $elf2_max) = explode('-', $row[1]);
-            $elf1_min = intval($elf1_min);
-            $elf1_max = intval($elf1_max);
-            $elf2_min = intval($elf2_min);
-            $elf2_max = intval($elf2_max);
+            list($elf1_min, $elf1_max, $elf2_min, $elf2_max) = $this->getElfsMinAndMax($row);
             $total_range++;
             if (($elf1_min >= $elf2_min && $elf1_max <= $elf2_max) || ($elf1_min <= $elf2_min && $elf1_max >= $elf2_max) ) {
                 $total_range_containing++;
@@ -40,22 +35,25 @@ class DayChallenge4 extends DayChallengeBase
         $total_range = 0;
         $fp = $this->openStream();
         while ($row = fgetcsv($fp)) {
-            list($elf1_min, $elf1_max) = explode('-', $row[0]);
-            list($elf2_min, $elf2_max) = explode('-', $row[1]);
-            $elf1_min = intval($elf1_min);
-            $elf1_max = intval($elf1_max);
-            $elf2_min = intval($elf2_min);
-            $elf2_max = intval($elf2_max);
+            list($elf1_min, $elf1_max, $elf2_min, $elf2_max) = $this->getElfsMinAndMax($row);
             $total_range++;
             if (($elf1_min <= $elf2_max || $elf1_max <= $elf2_min) && ($elf1_min >= $elf2_min || $elf1_max >= $elf2_min )) {
-                if ($total_range > 100 && $total_range < 150) 
-                    PrintCmnFns::printCode($row[0] . ' | ' . $row[1]);
                 $total_range_overlapping++;
-            } else {
-                // PrintCmnFns::printCode($row[0] . ' | ' . $row[1]);
             }
 
         }
         PrintCmnFns::printRow('Il numero di range che sono si overlappano è: ', "$total_range_overlapping/$total_range");
+    }
+    
+    private function getElfsMinAndMax(array $row): array
+    {
+        list($elf1_min, $elf1_max) = explode('-', $row[0]);
+        list($elf2_min, $elf2_max) = explode('-', $row[1]);
+        return [
+            intval($elf1_min),
+            intval($elf1_max),
+            intval($elf2_min),
+            intval($elf2_max),
+        ];
     }
 }
