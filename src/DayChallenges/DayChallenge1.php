@@ -1,15 +1,15 @@
 <?php
+
 namespace AdventCode\DayChallenges;
+
 use AdventCode\Common\DayChallengeBase;
 use AdventCode\Common\PrintCmnFns;
 
 class DayChallenge1 extends DayChallengeBase
 {
-    protected $title = 'Day One';
-
     public function printFirstPartSolution(): void
     {
-        PrintCmnFns::printTitle($this->title.' PT1');
+        PrintCmnFns::printTitle($this->getTitle() . ' PT1');
         $fp = fopen('csv/day1/calories.csv', 'r');
         $total_elf_num = 0;
         $saved_elf_num = 0;
@@ -40,7 +40,7 @@ class DayChallenge1 extends DayChallengeBase
 
     public function printSecondPartSolution(): void
     {
-        PrintCmnFns::printTitle($this->title.' PT2');
+        PrintCmnFns::printTitle($this->getTitle() . ' PT2');
         $fp = fopen('csv/day1/calories.csv', 'r');
         $ranking_table = [0, 0, 0,];
         $total_elf_num = 0;

@@ -1,12 +1,15 @@
 <?php
+
 namespace AdventCode\Common;
-use AdventCode\Common\DayChallengeInterface;
+
+use ReflectionClass;
 
 abstract class DayChallengeBase implements DayChallengeInterface
 {
-    protected $title;
     public function getTitle(): string
     {
-        return $this->title;
+        $class_name = (new ReflectionClass($this))->getShortName();
+        $number = substr($class_name, -1);
+        return "Day $number";
     }
 }

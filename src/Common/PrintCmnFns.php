@@ -1,16 +1,17 @@
 <?php
+
 namespace AdventCode\Common;
 
 class PrintCmnFns
 {
     public static function printTitle(string $title): void
     {
-        self::printSimpleRow("<h4>$title </h4>", false);
+        self::printSimpleRow("<h3>$title </h3>", false);
     }
 
     public static function printSubtitle(string $subtitle): void
     {
-        self::printSimpleRow("<h5>$subtitle </h5>", false);
+        self::printSimpleRow("<h4>$subtitle </h4>", false);
     }
 
     public static function printRow(string $prefix, string $subject): void
@@ -19,12 +20,12 @@ class PrintCmnFns
     }
 
     public static function printSimpleRow(string $text, bool $acapo = true): void
-    {   
-        echo "$text". ($acapo ? '<br/>' : '');
+    {
+        echo "$text" . ($acapo ? '<br/>' : '');
     }
 
     public static function printSeparator(): void
-    {   
+    {
         echo "<hr/>";
     }
 

@@ -1,4 +1,5 @@
 <?php
+
 namespace AdventCode\Common;
 
 interface DayChallengeInterface

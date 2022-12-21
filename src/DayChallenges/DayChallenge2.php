@@ -20,7 +20,6 @@ class DayChallenge2 extends DayChallengeBase
     private const DEFEAT_PT2 = 'X';
     private const DRAW_PT2 = 'Y';
     private const WIN_PT2 = 'Z';
-    protected $title = 'Day Two';
     protected $legends_pt1 = [
         self::MYROCK    => 1,
         self::MYPAPER   => 2,
@@ -30,25 +29,26 @@ class DayChallenge2 extends DayChallengeBase
         self::WIN       => 6,
     ];
     protected $outcome_legend = [
-        self::ROCK => [
-            'towin' => self::MYPAPER,
+        self::ROCK    => [
+            'towin'  => self::MYPAPER,
             'tolose' => self::MYSCISSOR,
             'todraw' => self::MYROCK,
         ],
-        self::PAPER => [
-            'towin' => self::MYSCISSOR,
+        self::PAPER   => [
+            'towin'  => self::MYSCISSOR,
             'tolose' => self::MYROCK,
             'todraw' => self::MYPAPER,
         ],
         self::SCISSOR => [
-            'towin' => self::MYROCK,
+            'towin'  => self::MYROCK,
             'tolose' => self::MYPAPER,
             'todraw' => self::MYSCISSOR,
         ],
     ];
+
     public function printFirstPartSolution(): void
     {
-        PrintCmnFns::printSubtitle($this->title . ' PT1');
+        PrintCmnFns::printSubtitle($this->getTitle() . ' PT1');
         $fp = fopen('csv/day2/strategy.csv', 'r');
         $my_total_score = 0;
         $total_win = 0;
@@ -79,7 +79,7 @@ class DayChallenge2 extends DayChallengeBase
 
     public function printSecondPartSolution(): void
     {
-        PrintCmnFns::printSubtitle($this->title . ' PT2');
+        PrintCmnFns::printSubtitle($this->getTitle() . ' PT2');
         $fp = fopen('csv/day2/strategy.csv', 'r');
         $my_total_score = 0;
         $total_win = 0;
@@ -130,8 +130,9 @@ class DayChallenge2 extends DayChallengeBase
     {
         return $this->isWin($response, $myresponse) ? self::WIN : ($this->isDraw($response, $myresponse) ? self::DRAW : self::DEFEAT);
     }
-    
-    private function getResponseToGive(string $response, string $outcome) {
+
+    private function getResponseToGive(string $response, string $outcome)
+    {
         switch ($outcome) {
             case self::DEFEAT_PT2:
                 $myresponse = $this->outcome_legend[$response]['tolose'];
