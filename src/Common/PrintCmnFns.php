@@ -4,9 +4,9 @@ namespace AdventCode\Common;
 
 class PrintCmnFns
 {
-    public static function printTitle(string $title): void
+    public static function printTitle(string $title, string $id = ''): void
     {
-        self::printSimpleRow("<h3>$title </h3>", false);
+        self::printSimpleRow("<h3 id='$id'>$title </h3>", false);
     }
 
     public static function printSubtitle(string $subtitle): void

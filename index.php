@@ -18,7 +18,8 @@ for ($index = 1; $index < 27; $index++) {
         PrintCmnFns::printSimpleRow($exception->getMessage());
         continue;
     }
-    PrintCmnFns::printTitle("Printing " . $day_challenge->getTitle());
+    $id = str_replace(' ', '', strtolower($day_challenge->getTitle()));
+    PrintCmnFns::printTitle("Printing " . $day_challenge->getTitle(), $id);
     $day_challenge->printFirstPartSolution();
     $day_challenge->printSecondPartSolution();
     PrintCmnFns::printSeparator();
