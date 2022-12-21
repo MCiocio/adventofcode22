@@ -68,6 +68,9 @@ class DayChallenge3 extends DayChallengeBase
         return fopen('csv/day3/items.csv', 'r');
     }
 
+    /**
+     * @throws Exception
+     */
     public function printFirstPartSolution(): void
     {
         PrintCmnFns::printSubtitle($this->getTitle() . ' PT1');
@@ -76,7 +79,7 @@ class DayChallenge3 extends DayChallengeBase
         while ($row = fgetcsv($fp)) {
             list($first_part_items, $second_part_items) = str_split($row[0], strlen($row[0])/2);
             if (strlen($first_part_items) !== strlen($second_part_items)) {
-                throw new \Exception('The items are not divisible in two equal parts');
+                throw new Exception('The items are not divisible in two equal parts');
             }
             $first_items_array = str_split($first_part_items);
             $second_items_array = str_split($second_part_items);
@@ -89,7 +92,7 @@ class DayChallenge3 extends DayChallengeBase
                 PrintCmnFns::printCode($common_item);
                 PrintCmnFns::printCode($first_items_array);
                 PrintCmnFns::printCode($second_items_array);
-                throw new \Exception('Element not find in priorities mapping');
+                throw new Exception('Element not find in priorities mapping');
             }
             $priority_sum += $priority;
         }
@@ -97,6 +100,9 @@ class DayChallenge3 extends DayChallengeBase
 
     }
 
+    /**
+     * @throws Exception
+     */
     public function printSecondPartSolution(): void
     {
         PrintCmnFns::printSubtitle($this->getTitle() . ' PT2');

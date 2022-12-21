@@ -26,7 +26,7 @@ class PrintCmnFns
 
     public static function printSeparator(): void
     {
-        echo "<hr/>";
+        echo '<hr/>';
     }
 
     public static function includeCss()

@@ -64,7 +64,7 @@ class DayChallenge1 extends DayChallengeBase
         }
         foreach ($ranking_table as $position => $calories) {
             $index = $position + 1;
-            PrintCmnFns::printRow("Il {$index}° elfo della classifica ha:", "{$calories} calorie");
+            PrintCmnFns::printRow("Il {$index}° elfo della classifica ha:", "$calories calorie");
         }
         PrintCmnFns::printRow('Il totale delle calorie è:', (array_sum($ranking_table)));
     }

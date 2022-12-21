@@ -6,8 +6,11 @@ use Exception;
 
 class DayChallengeFactory
 {
-    const NAMESPACE = "AdventCode\\DayChallenges\\";
+    private const NAMESPACE = "AdventCode\\DayChallenges\\";
 
+    /**
+     * @throws Exception
+     */
     public static function factory(int $day): ?DayChallengeInterface
     {
         $class = self::NAMESPACE . 'DayChallenge' . $day;

@@ -82,6 +82,9 @@ class DayChallenge2 extends DayChallengeBase
         PrintCmnFns::printRow('Il mio punteggio totale è:', $my_total_score);
     }
 
+    /**
+     * @throws Exception
+     */
     public function printSecondPartSolution(): void
     {
         PrintCmnFns::printSubtitle($this->getTitle() . ' PT2');
@@ -136,6 +139,9 @@ class DayChallenge2 extends DayChallengeBase
         return $this->isWin($response, $myresponse) ? self::WIN : ($this->isDraw($response, $myresponse) ? self::DRAW : self::DEFEAT);
     }
 
+    /**
+     * @throws Exception
+     */
     private function getResponseToGive(string $response, string $outcome)
     {
         switch ($outcome) {

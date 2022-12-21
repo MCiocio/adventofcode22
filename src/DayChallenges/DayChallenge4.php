@@ -4,7 +4,6 @@ namespace AdventCode\DayChallenges;
 
 use AdventCode\Common\DayChallengeBase;
 use AdventCode\Common\PrintCmnFns;
-use Exception;
 
 class DayChallenge4 extends DayChallengeBase
 {
@@ -19,7 +18,7 @@ class DayChallenge4 extends DayChallengeBase
         while ($row = fgetcsv($fp)) {
             list($elf1_min, $elf1_max, $elf2_min, $elf2_max) = $this->getElfsMinAndMax($row);
             $total_range++;
-            if (($elf1_min >= $elf2_min && $elf1_max <= $elf2_max) || ($elf1_min <= $elf2_min && $elf1_max >= $elf2_max) ) {
+            if (($elf1_min >= $elf2_min && $elf1_max <= $elf2_max) || ($elf1_min <= $elf2_min && $elf1_max >= $elf2_max)) {
                 $total_range_containing++;
             }
         }
@@ -37,14 +36,14 @@ class DayChallenge4 extends DayChallengeBase
         while ($row = fgetcsv($fp)) {
             list($elf1_min, $elf1_max, $elf2_min, $elf2_max) = $this->getElfsMinAndMax($row);
             $total_range++;
-            if (($elf1_min <= $elf2_max || $elf1_max <= $elf2_min) && ($elf1_min >= $elf2_min || $elf1_max >= $elf2_min )) {
+            if (($elf1_min <= $elf2_max || $elf1_max <= $elf2_min) && ($elf1_min >= $elf2_min || $elf1_max >= $elf2_min)) {
                 $total_range_overlapping++;
             }
 
         }
         PrintCmnFns::printRow('Il numero di range che sono si overlappano è: ', "$total_range_overlapping/$total_range");
     }
-    
+
     private function getElfsMinAndMax(array $row): array
     {
         list($elf1_min, $elf1_max) = explode('-', $row[0]);

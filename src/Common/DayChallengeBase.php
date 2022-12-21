@@ -15,7 +15,7 @@ abstract class DayChallengeBase implements DayChallengeInterface
     protected function openStream()
     {
         $daynumber = $this->getDayNumber();
-        return fopen("csv/day{$daynumber}/input.csv", 'r');
+        return fopen("csv/day$daynumber/input.csv", 'r');
     }
     
     protected function getDayNumber(): int
