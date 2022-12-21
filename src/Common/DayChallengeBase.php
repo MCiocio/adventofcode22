@@ -8,10 +8,20 @@ abstract class DayChallengeBase implements DayChallengeInterface
 {
     public function getTitle(): string
     {
-        $class_name = (new ReflectionClass($this))->getShortName();
-        $number = substr($class_name, -1);
+        $number = $this->getDayNumber();
         return "Day $number";
     }
+
+    protected function openStream()
+    {
+        $daynumber = $this->getDayNumber();
+        return fopen("csv/day{$daynumber}/input.csv", 'r');
+    }
     
-    abstract protected function openStream();
+    protected function getDayNumber(): int
+    {
+        $class_name = (new ReflectionClass($this))->getShortName();
+        $number = substr($class_name, -1);
+        return intval($number);
+    }
 }
