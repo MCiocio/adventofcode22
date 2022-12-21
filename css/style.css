@@ -25,3 +25,23 @@ font, h4 {
     z-index:1231231;
     /*text-shadow: 1px 1px 3px #fff;*/
 }
+pre {
+    background: #d8c1c1;
+    border: 2px solid #af4f27;
+    /*border-left: 3px solid #f36d33;*/
+    color: #360606;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.2;
+    margin: 10px;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
+    text-transform: none;
+    border-radius: 10px;
+    text-shadow: none;
+}

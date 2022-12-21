@@ -38,4 +38,11 @@ class PrintCmnFns
     {
         echo "<script type='text/javascript' src='/js/snow.js'></script>";
     }
+
+    public static function printCode($variable): void
+    {
+        echo '<pre>';
+        var_dump($variable);
+        echo '</pre>';
+    }
 }
