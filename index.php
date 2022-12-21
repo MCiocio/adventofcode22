@@ -9,7 +9,7 @@ PrintCmnFns::includeCss();
 echo '</head>';
 echo '<section class="sky">';
 
-for ($index = 1; $index < 27; $index++) {
+for ($index = 1; $index < 25; $index++) {
     // PrintCmnFns::printSimpleRow("Round $index");
     // $day_challenge = new \AdventCode\DayChallenges\DayChallenge1();
     try {
