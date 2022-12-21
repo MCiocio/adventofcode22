@@ -12,4 +12,6 @@ abstract class DayChallengeBase implements DayChallengeInterface
         $number = substr($class_name, -1);
         return "Day $number";
     }
+    
+    abstract protected function openStream();
 }

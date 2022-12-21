@@ -46,15 +46,20 @@ class DayChallenge2 extends DayChallengeBase
         ],
     ];
 
+    protected function openStream()
+    {
+        return fopen('csv/day2/strategy.csv', 'r');
+    }
+
     public function printFirstPartSolution(): void
     {
         PrintCmnFns::printSubtitle($this->getTitle() . ' PT1');
-        $fp = fopen('csv/day2/strategy.csv', 'r');
         $my_total_score = 0;
         $total_win = 0;
         $total_draw = 0;
         $total_defeat = 0;
         $total_battles = 0;
+        $fp = $this->openStream();
         while ($row = fgetcsv($fp)) {
             list($response, $myresponse) = explode(' ', $row[0]);
             $score = $this->legends_pt1[$myresponse];
@@ -80,12 +85,12 @@ class DayChallenge2 extends DayChallengeBase
     public function printSecondPartSolution(): void
     {
         PrintCmnFns::printSubtitle($this->getTitle() . ' PT2');
-        $fp = fopen('csv/day2/strategy.csv', 'r');
         $my_total_score = 0;
         $total_win = 0;
         $total_draw = 0;
         $total_defeat = 0;
         $total_battles = 0;
+        $fp = $this->openStream();
         while ($row = fgetcsv($fp)) {
             list($response, $outcome) = explode(' ', $row[0]);
             // PrintCmnFns::printSimpleRow($outcome);

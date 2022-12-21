@@ -7,16 +7,21 @@ use AdventCode\Common\PrintCmnFns;
 
 class DayChallenge1 extends DayChallengeBase
 {
+    protected function openStream()
+    {
+        return fopen('csv/day1/calories.csv', 'r');
+    }
+
     public function printFirstPartSolution(): void
     {
         PrintCmnFns::printTitle($this->getTitle() . ' PT1');
-        $fp = fopen('csv/day1/calories.csv', 'r');
         $total_elf_num = 0;
         $saved_elf_num = 0;
         $saved_elf_calories = 0;
         $saved_num_object = 0;
         $current_elf_calories = 0;
         $num_object = 0;
+        $fp = $this->openStream();
         while ($row = fgetcsv($fp)) {
             if (empty($row[0])) {
                 $total_elf_num++;
@@ -41,10 +46,10 @@ class DayChallenge1 extends DayChallengeBase
     public function printSecondPartSolution(): void
     {
         PrintCmnFns::printTitle($this->getTitle() . ' PT2');
-        $fp = fopen('csv/day1/calories.csv', 'r');
         $ranking_table = [0, 0, 0,];
         $total_elf_num = 0;
         $current_elf_calories = 0;
+        $fp = $this->openStream();
         while ($row = fgetcsv($fp)) {
             if (empty($row[0])) {
                 $total_elf_num++;
