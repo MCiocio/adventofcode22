@@ -45,4 +45,25 @@ class PrintCmnFns
         var_dump($variable);
         echo '</pre>';
     }
+    public static function printMatrix($variable): void
+    {
+        $max = 0;
+        foreach($variable as $index => $values) {
+            $max = max($max, count($values));
+        }
+        echo '<table>';
+        for ($i = $max-1; $i >= 0; $i--) {
+            echo '<tr>';
+            foreach($variable as $index => $values) {
+                echo '<td>'.(is_null($values[$i]) ? '' : '['.$values[$i].']').'</td>';
+            }
+            echo '</tr>';
+        }
+        echo '<tfoot>';
+        echo '<tr>';
+        echo '<td>'.implode('</td><td>', array_keys($variable));
+        echo '</tr>';
+        echo '</tfoot>';
+        echo '</table>';
+    }
 }

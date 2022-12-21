@@ -45,3 +45,13 @@ pre {
     border-radius: 10px;
     text-shadow: none;
 }
+
+table {
+    padding: 5px;
+    text-align:center;
+    margin-bottom: 20px;
+}
+
+td {
+    padding: 2px 20px 2px 20px;
+}
