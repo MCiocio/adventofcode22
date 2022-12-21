@@ -40,7 +40,7 @@ class DayChallenge5 extends DayChallengeBase
             list($crate_to_move, $starting_stack, $destination_stack) = $this->formatAndReturnMoveInformation($command[0]);
             for ($index = 0; $index < $crate_to_move; $index++) {
                 $crate = array_pop($matrix[$starting_stack]);
-                array_push($matrix[$destination_stack], $crate);
+                $matrix[$destination_stack][] = $crate;
             }
         }
         $return_command = $this->getCommandToReturn($matrix);
@@ -74,7 +74,7 @@ class DayChallenge5 extends DayChallengeBase
         PrintCmnFns::printRow('Il comando finale è: ', $return_command);
     }
 
-    private function formatAndReturnMoveInformation(string $command_string)
+    private function formatAndReturnMoveInformation(string $command_string): array
     {
         $command_string = str_replace('move ', '', $command_string);
         $command_string = str_replace(' from ', ',', $command_string);
@@ -87,10 +87,10 @@ class DayChallenge5 extends DayChallengeBase
         ];
     }
 
-    private function getCommandToReturn($matrix)
+    private function getCommandToReturn($matrix): string
     {
         $return = '';
-        foreach ($matrix as $stack => $values) {
+        foreach ($matrix as $values) {
             $return .= array_pop($values);
         }
         return $return;
