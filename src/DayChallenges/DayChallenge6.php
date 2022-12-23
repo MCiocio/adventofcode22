@@ -5,12 +5,6 @@ namespace AdventCode\DayChallenges;
 use AdventCode\Common\DayChallengeBase;
 use AdventCode\Common\PrintCmnFns;
 use Exception;
-use function fgetcsv;
-use function str_replace;
-use function str_split;
-use function strlen;
-use function strpos;
-use function substr;
 
 class DayChallenge6 extends DayChallengeBase
 {

@@ -39,10 +39,14 @@ class PrintCmnFns
         echo "<script type='text/javascript' src='/js/snow.js'></script>";
     }
 
-    public static function printCode($variable): void
+    public static function printCode($variable, bool $use_vardump = true): void
     {
         echo '<pre>';
-        var_dump($variable);
+        if ($use_vardump) {
+            var_dump($variable);
+        } else {
+            print_r($variable);
+        }
         echo '</pre>';
     }
     public static function printMatrix($variable): void
