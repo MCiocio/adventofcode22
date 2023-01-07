@@ -21,7 +21,12 @@ class PrintCmnFns
 
     public static function printSimpleRow(string $text, bool $acapo = true): void
     {
-        echo "$text" . ($acapo ? '<br/>' : '');
+        echo "<span>$text</span>" . ($acapo ? '<br/>' : '');
+    }
+
+    public static function printColoredRow(string $text, bool $acapo = true, string $color = 'black'): void
+    {
+        echo "<font color='$color'>$text</font>" . ($acapo ? '<br/>' : '');
     }
 
     public static function printSeparator(): void

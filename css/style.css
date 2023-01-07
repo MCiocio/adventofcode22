@@ -20,7 +20,7 @@ body, html {
     display: block;
     background-color: #6fa585;
 }
-font, h4, h3, pre {
+font, h4, h3, pre, a, span {
     position: relative;
     z-index:1231231;
     /*text-shadow: 1px 1px 3px #fff;*/
